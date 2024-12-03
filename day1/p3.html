@@ -1,0 +1,57 @@
+<!--write html code for adding an content inside my webpage where you need to add block level and inline element for displaing college dierent depatment-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Page</title>
+    <style>
+        header, footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+        .departments {
+            margin-top: 20px;
+        }
+        .department {
+            display: block; /* Block-level element */
+            margin: 10px 0;
+        }
+        .highlight {
+            color: blue; /* Inline element styling */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HARVARD</h1>
+</header>
+
+<main>
+    <h2>Welcome to HARVARD</h2>
+    <p>Providing quality education for future leaders.</p>
+
+    <div class="departments">
+        <h3>Our Departments</h3>
+        <span class="department">Computer Science</span>
+        <span class="department">Mechanical Engineering</span>
+        <span class="department">Electronics and Communication</span>
+        <span class="department">Civil Engineering</span>
+        <p>Special programs in <span class="highlight">AI</span> and <span class="highlight">Robotics</span>.</p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 HARVARD</p>
+</footer>
+
+</body>
+</html>
