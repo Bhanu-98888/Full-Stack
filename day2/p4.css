@@ -1,0 +1,15 @@
+p{
+    font-size: x-large;
+    color: brown;
+    font-style: italic;
+    text-align: center;
+}
+.aids{
+    text-align: center;
+    font-size: large;
+    color: blueviolet;
+}
+#ai{
+    text-align: center;
+    color: rgb(42, 165, 144);
+}

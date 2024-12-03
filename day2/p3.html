@@ -1,0 +1,106 @@
+<!--beauty parlor webpage using forms -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Bliss Parlor - Appointment Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #FF69B4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        form {
+            width: 50%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #FF1493;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Beauty Bliss Parlor - Book Your Appointment</h1>
+</header>
+
+<form action="submit_appointment.html" method="post">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+    <label for="service">Select Service:</label>
+    <select id="service" name="service" required>
+        <option value="">--Choose a Service--</option>
+        <option value="haircut">Haircut</option>
+        <option value="facial">Facial</option>
+        <option value="manicure">Manicure</option>
+        <option value="pedicure">Pedicure</option>
+        <option value="makeup">Makeup</option>
+        <option value="spa">Spa Treatment</option>
+    </select>
+
+    <label for="date">Preferred Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Preferred Time:</label>
+    <input type="time" id="time" name="time" required>
+
+    <label for="stylist">Preferred Stylist:</label>
+    <select id="stylist" name="stylist">
+        <option value="">--No Preference--</option>
+        <option value="stylist1">Stylist 1</option>
+        <option value="stylist2">Stylist 2</option>
+        <option value="stylist3">Stylist 3</option>
+    </select>
+
+    <label for="notes">Additional Notes:</label>
+    <textarea id="notes" name="notes" placeholder="Any specific requests or notes..." rows="4"></textarea>
+
+    <label for="newsletter">Subscribe to Newsletter:</label>
+    <input type="checkbox" id="newsletter" name="newsletter">
+
+    <input type="submit" value="Book Appointment">
+</form>
+
+</body>
+</html>

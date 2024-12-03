@@ -1,0 +1,17 @@
+p{
+    color: aquamarine;
+    background-color: black;
+    text-transform: uppercase;
+    text-indent: 0cap;
+    text-shadow: 1cm;
+    text-align: center;
+    text-decoration: wavy;
+    height: max-content;
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(226, 43, 98);
+    background-color: rgb(9, 255, 0);
+
+}
