@@ -1,0 +1,233 @@
+<!--product listing logo page with dynamic filters-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puma Product Listing</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 20px;
+  }
+  .nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+  }
+  .nav-menu a:hover {
+    background-color: #555;
+  }
+  .search-bar {
+    margin-left: 20px;
+  }
+  .search-bar input {
+    padding: 8px;
+    width: 200px;
+  }
+  .cart-icon {
+    font-size: 20px;
+    margin-left: 20px;
+  }
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Sidebar and Main Layout */
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .sidebar {
+    width: 25%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+  }
+  .sidebar h3 {
+    margin-bottom: 10px;
+  }
+  .sidebar label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .main-content {
+    width: 75%;
+    padding: 20px;
+  }
+
+  /* Product Grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+  }
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .product-card h4 {
+    margin: 10px 0;
+  }
+  .product-card p {
+    margin: 5px 0;
+  }
+  .product-card button {
+    padding: 10px 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  .product-card button:hover {
+    background-color: #555;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      background-color: #000;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+    }
+    .nav-menu.active {
+      display: flex;
+    }
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 24px;
+      color: #fff;
+    }
+    .container {
+      flex-direction: column;
+    }
+    .sidebar, .main-content {
+      width: 100%;
+    }
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Puma</div>
+  <nav>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <div class="nav-menu">
+      <a href="#">Home</a>
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">Kids</a>
+      <a href="#">Sale</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search products...">
+    </div>
+    <div class="cart-icon">🛒</div>
+  </nav>
+</header>
+
+<div class="container">
+  <!-- Sidebar for Filters -->
+  <aside class="sidebar">
+    <h3>Filter by Category</h3>
+    <label><input type="checkbox"> Men</label>
+    <label><input type="checkbox"> Women</label>
+    <label><input type="checkbox"> Kids</label>
+
+    <h3>Filter by Price Range</h3>
+    <label><input type="radio" name="price"> Under ₹1,000</label>
+    <label><input type="radio" name="price"> ₹1,000 - ₹5,000</label>
+    <label><input type="radio" name="price"> Over ₹5,000</label>
+
+    <h3>Filter by Brand</h3>
+    <label><input type="checkbox"> Puma</label>
+    <label><input type="checkbox"> softride</label>
+    <label><input type="checkbox"> seude</label>
+  </aside>
+
+  <!-- Main Content for Product Listing -->
+  <main class="main-content">
+    <h1>PUMA Product Listing</h1>
+    <div class="product-grid">
+      <!-- Example Product Card -->
+      <div class="product-card">
+        <img src="pxf.avif" alt="Product Image">
+        <h4>puma x fenty sneakers</h4>
+        <p>₹15,000</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="softides.webp" alt="Product Image">
+        <h4>softride </h4>
+        <p>₹5,500</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="se.jpg" alt="Product Image">
+        <h4>seude flat shoes</h4>
+        <p>₹6,000</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="red.jpg" alt="Product Image">
+        <h4>classic red seude</h4>
+        <p>₹10,000</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  function toggleMenu() {
+    document.querySelector('.nav-menu').classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
